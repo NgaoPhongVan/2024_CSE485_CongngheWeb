@@ -1,0 +1,41 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.h1-text{
+    width: 90%;
+    height: 30px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+    border-left: 5px solid red;
+}
+
+.h1{
+    text-transform: uppercase;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.contents{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.course{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    flex-basis: calc(33% - 10px);
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}

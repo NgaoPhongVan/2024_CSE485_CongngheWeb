@@ -21,12 +21,12 @@ $navItems = [
     <link rel="stylesheet" href="./bootstrap/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
     <style>
         .header{
-            background-color: #0a1f77;
+            background-color: darkblue;
             display: flex;
         }
         .naviteams{
             display: flex;
-            height: 40px;
+            height: 30px;
             align-content: center;
             justify-content: space-around;
         }
@@ -38,7 +38,7 @@ $navItems = [
             list-style: none;
         }
         span{
-            font-size: 18px;
+            font-size: 16px;
             color: white;
             padding-left: 16px;
             border-left: 2px solid white;
