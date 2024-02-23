@@ -22,15 +22,13 @@ $navItems = [
     <style>
         .header{
             background-color: #0a1f77;
-            color: #fff;
             display: flex;
-            justify-content: space-around;
-            align-items: center;
         }
         .naviteams{
             display: flex;
-            height: 50px;
-            
+            height: 40px;
+            align-content: center;
+            justify-content: space-around;
         }
         .bxs-home{
             color: white;
@@ -40,21 +38,21 @@ $navItems = [
             list-style: none;
         }
         span{
-            font-size: 30px;
-            border-left: 3px solid white;
+            font-size: 18px;
+            color: white;
+            padding-left: 16px;
+            border-left: 2px solid white;
         }
     </style>
 </head>
 <body>
-<div class = "header">
+<div class = header>
     <ul class = "naviteams">
         <i class='bx bxs-home'></i>
         <?php
-        echo '<nav><ul>';
         foreach ($navItems as $item){
             echo "<li><span>$item</span></li>";
         }
-        echo '</ul></nav>';
         ?>
     </ul>
 </div>
