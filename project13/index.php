@@ -64,6 +64,9 @@
     <link rel="stylesheet" href="./bootstrap/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
+        .container-fluid{
+            margin: 10px;
+        }
         .head{
             border-left: 4px solid #8b2627;
             color: #8b2627;
@@ -75,14 +78,23 @@
         img {
             height: 200px;
             width: 480px;
+            margin-bottom: 10px;
+        }
+        h5 {
+            font-weight: 700;
         }
         .content{
             width: 480px;
+            margin-top: 10px;
         }
         .contents{
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+        }
+        .bx {
+            margin-right: 5px;
+            color: #8b2627;
         }
     </style>
 </head>
@@ -93,7 +105,7 @@
             <?php foreach ($courses as $course) {
                 echo '<div class="content">';
                 echo '<img src="'.$course['img'].'" alt="">';
-                echo '<h3>' . $course['title'] . '</h3>';
+                echo '<h5>' . $course['title'] . '</h5>';
                 echo '<p>'.$course['description'].'</p>';
                 echo '<div class="text"><i class=\'bx bxs-gift\'></i>'.$course['fee'].'</div>';
                 echo '<div class="text"><i class=\'bx bxs-time-five\'></i>'.$course['start_date'].'</div>';
