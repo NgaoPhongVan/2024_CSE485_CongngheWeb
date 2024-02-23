@@ -1,0 +1,22 @@
+.container{
+    background-color: aquamarine;
+}
+.head{
+    border-left: 4px solid #8b2627;
+    color: #8b2627;
+    font-weight: 700;
+    font-size: 20px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+img {
+    height: 200px;
+    width: 500px;
+}
+.content{
+    width: 500px;
+}
+.contents{
+    display: flex;
+    justify-content: space-between;
+}
