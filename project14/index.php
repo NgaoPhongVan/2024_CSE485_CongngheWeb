@@ -46,6 +46,7 @@
         }
         .c1 {
             width: 30%;
+            font-weight: bold;
         }
         .footer{
             display: flex;
@@ -168,16 +169,16 @@
                     <tr>
                         <td class="c1">Notes</td>
                         <td class="c2">
-                            <textarea name="editor" id="editor" cols="30" rows="10"></textarea>
+                            <textarea name="edits" id="edits" cols="30" rows="10"></textarea>
                         </td>
                         <script type="text/javascript">
-                            CKEDITOR.replace( 'editor', {
+                            CKEDITOR.replace( 'edits', {
                                 height: "100px"
                             } );
                         </script>
                     </tr>
                     <tr>
-                        <td class="c1">PreFerred shift</td>
+                        <td class="c1">Preferred shift</td>
                         <td class="c2"><input type="checkbox" name="" id="">Regular</td>
                     </tr>
                     <tr>
