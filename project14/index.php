@@ -22,9 +22,20 @@ Islands", "Brunei",
     <link rel="stylesheet" href="./boxicons-2.1.4/boxicons-2.1.4/css/boxicons.min.css">
     <link rel="stylesheet" href="./bootstrap/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
     <title>Document</title>
+
+    <style>
+        .main-container{
+            width: 70%;
+            margin: 0 auto;
+        }
+        input{
+            border-top: 3px solid black;
+        }
+
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container mt-5 main-container" >
     <p class="fw-bold" >bassic info</p>
 <hr>
 <table class="table table-borderless">
