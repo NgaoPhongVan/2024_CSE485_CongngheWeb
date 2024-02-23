@@ -124,7 +124,97 @@
             <div class="title-info">
                 <h3>Contact Info</h3>
             </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="email" name="email" placeholder="name@example.com">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="addr">Address</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="addr" name="addr" placeholder="7 Houndstoon Rd.">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="city">City</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="city" name="city" placeholder="London">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="region">Region</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="region" name="region" placeholder="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="postal">Postal</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="postal" name="postal" placeholder="WG2 7LT">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="country">Country</label>
+                </div>
+                <div class="col-75">
+
+
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="phone">US Home Phone</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="phone" name="phone" placeholder="(234)234-2342">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="photo">Photo</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="photo" name="photo" placeholder="EmpID9.bmp">
+                </div>
+            </div>
+
+            <div class="title-info">
+                <h3>Optional Info</h3>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="notes">Notes</label>
+                </div>
+                <div class="col-75">
+                    <div id="editor">Anne has a BA degree in English from St.Lawrence College.
+                        She iss fluent in French and German.ZZZ</div>
+                </div>
+            </div>
     </div>
 </body>
-
+<script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
 </html>
