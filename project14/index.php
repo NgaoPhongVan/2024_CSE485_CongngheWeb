@@ -85,45 +85,34 @@ Islands", "Brunei",
 <hr>
 <table class="table table-borderless">
     <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
+        <td class="col-2 fw-bold">Email</td>
+        <td class="col-10"><input type="email" style="width: 100%" value="name@example.com"></td>
     </tr>
     <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
+        <td class="col-2 fw-bold">Address</td>
+        <td class="col-10"><input type="text" style="width: 100%" value="& Houndstooth Rd."></td>
     </tr>
     <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
+        <td class="col-2 fw-bold">City</td>
+        <td class="col-10"><input type="text" style="width: 100%" value="VietNam"></td>
     </tr>
     <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
+        <td class="col-2 fw-bold">Region</td>
+        <td class="col-10"><input type="text" style="width: 100%"></td>
     </tr>
     <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
+        <td class="col-2 fw-bold">Country</td>
+        <td class="col-10"><input type="text" style="width: 100%">
+            <select class="form-select col-3">
+                <?php
+                foreach ($countries as $country) {
+                    echo '<option>' . $country . '</option>';
+                }
+                ?>
+            </select>
+        </td>
     </tr>
-    <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
-    </tr>
-    <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
-    </tr>
-    <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
-    </tr>
-    <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
-    </tr>
-    <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
-    </tr>
+
 </table>
 <table class="table table-borderless">
     <tr class="row align-items-center">
