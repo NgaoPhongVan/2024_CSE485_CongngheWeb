@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="./bootstrap/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
     <style>
         .course {
-            background-color: #f9f9f9;
+            background-color: beige;
             padding: 10px;
             margin-bottom: 20px;
         }
         .course h2 {
-            color: #333;
+            color: red;
         }
         .course p {
             color: #666;
@@ -32,7 +32,42 @@ quốc tế.',
         'start_date' => '2/2/24',
         'duration' => '2 - 2.5 năm'
     ],
-
+    [
+        'title' => 'Học viên quốc tế',
+        'description' => 'Chương trình đào tạo chính thức tại Việt Nam từ
+Aptech Global. Phát triển nghề nghiệp sinh viên IT như một lập trình viên
+quốc tế.',
+        'fee' => '15.000.000 VND',
+        'start_date' => '2/2/24',
+        'duration' => '2 - 2.5 năm'
+    ],
+    [
+        'title' => 'Học viên quốc tế',
+        'description' => 'Chương trình đào tạo chính thức tại Việt Nam từ
+Aptech Global. Phát triển nghề nghiệp sinh viên IT như một lập trình viên
+quốc tế.',
+        'fee' => '15.000.000 VND',
+        'start_date' => '2/2/24',
+        'duration' => '2 - 2.5 năm'
+    ],
+    [
+        'title' => 'Học viên quốc tế',
+        'description' => 'Chương trình đào tạo chính thức tại Việt Nam từ
+Aptech Global. Phát triển nghề nghiệp sinh viên IT như một lập trình viên
+quốc tế.',
+        'fee' => '15.000.000 VND',
+        'start_date' => '2/2/24',
+        'duration' => '2 - 2.5 năm'
+    ],
+    [
+        'title' => 'Học viên quốc tế',
+        'description' => 'Chương trình đào tạo chính thức tại Việt Nam từ
+Aptech Global. Phát triển nghề nghiệp sinh viên IT như một lập trình viên
+quốc tế.',
+        'fee' => '15.000.000 VND',
+        'start_date' => '2/2/24',
+        'duration' => '2 - 2.5 năm'
+    ],
 ];
 
 foreach ($courses as $course){
