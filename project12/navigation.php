@@ -20,37 +20,44 @@ $navItems = [
     <link rel="stylesheet" href="./boxicons-2.1.4/boxicons-2.1.4/css/boxicons.min.css">
     <link rel="stylesheet" href="./bootstrap/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
     <style>
-        .nav{
+        .header{
             background-color: #0a1f77;
             color: #fff;
             display: flex;
             justify-content: space-around;
             align-items: center;
         }
-        .text{
-            color: #fff;
-            padding-left: 20px;
-            font-family: 'Times New Roman', Times, serif;
+        .naviteams{
+            display: flex;
+            height: 50px;
+            
         }
-        .line{
-            border-left: 2px solid #fff;
-        }
-        .line:hover {
-            color: yellow;
-            cursor: pointer;
+        .bxs-home{
+            color: white;
+            font-size: 30px;
         }
         li{
             list-style: none;
         }
+        span{
+            font-size: 30px;
+            border-left: 3px solid white;
+        }
     </style>
 </head>
 <body>
-<?php
+<div class = "header">
+    <ul class = "naviteams">
+        <i class='bx bxs-home'></i>
+        <?php
+        echo '<nav><ul>';
+        foreach ($navItems as $item){
+            echo "<li><span>$item</span></li>";
+        }
+        echo '</ul></nav>';
+        ?>
+    </ul>
+</div>
 
-foreach ($navItems as $item){
-    echo "<li>$item</li>";
-}
-
-?>
 </body>
 </html>
