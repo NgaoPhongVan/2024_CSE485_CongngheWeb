@@ -20,7 +20,7 @@
             border-left: 5px solid red;
             padding: 5px 0 5px 5px;
             color: red;
-            margin-left: 2.5%;
+            margin-left: 3.5%;
         }
         .main-course{
             display: flex;
@@ -71,7 +71,7 @@ $courses = [
     ],
     [
         'img' => 'https://aptech.vn/wp-content/uploads/2021/05/lap-trinh-java.png.webp',
-        'title' => 'LẬP TRÌNH JAVA FULLSTACKế',
+        'title' => 'LẬP TRÌNH JAVA FULLSTACk',
         'description' => 'Phát triển ứng dụng web từ cơ bản đến nâng cao bằng Java, 
         các ứng dụng doanh nghiệp sử dụng J2EE, Servlet, JSP, Spring Framework, EJB,....',
         'fee' => 'ưu đãi giảm 24% học phí',
