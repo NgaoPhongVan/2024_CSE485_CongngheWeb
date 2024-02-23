@@ -23,9 +23,7 @@
     <title>project14</title>
     <link rel="stylesheet" href="./boxicons-2.1.4/boxicons-2.1.4/css/boxicons.min.css">
     <link rel="stylesheet" href="./bootstrap/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
-    
     <script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js"></script>
-<!-- <link rel="text/javascript" href="./ckeditor5-build-classic-41.1.0/ckeditor5-build-classic/ckeditor.js"> -->
     <style>
         body{
             background-color: #eeeeee;
@@ -193,7 +191,7 @@
                     <tr>
                         <td class="c1">Are you humman?</td>
                         <td class="c2"><h3>HIHI</h3></td>
-                    </tr>
+                        </tr>
                     <tr>
                         <td class="c1"></td>
                         <td class="c2"><input type="text" name="" id="" style="width: 34vw;"></td>
