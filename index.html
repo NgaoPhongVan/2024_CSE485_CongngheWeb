@@ -11,9 +11,15 @@
         <textarea name="" id="post_content" cols="30" rows="10"></textarea>
     </form>
     <script type="text/javascript">
-        CKEDITOR.replace( 'post_content', {
-            height: "100px"
-        } );
+        ClassicEditor
+            .create( document.querySelector( '#post_content' ), {
+                toolbar: [ /* your toolbar items */ ],
+                width: '500px',
+                height: '300px'
+            } )
+            .catch( error => {
+                console.error( error );
+            } );
     </script>
 </body>
 </html>
