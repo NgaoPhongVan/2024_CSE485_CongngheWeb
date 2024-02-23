@@ -168,10 +168,10 @@
                     <tr>
                         <td class="c1">Notes</td>
                         <td class="c2">
-                            <textarea name="post_content" id="post_content" cols="30" rows="10"></textarea>
+                            <textarea name="editor" id="editor" cols="30" rows="10"></textarea>
                         </td>
                         <script type="text/javascript">
-                            CKEDITOR.replace( 'post_content', {
+                            CKEDITOR.replace( 'editor', {
                                 height: "100px"
                             } );
                         </script>
