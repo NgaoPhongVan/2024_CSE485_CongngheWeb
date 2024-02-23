@@ -27,15 +27,16 @@ Islands", "Brunei",
         .main-container{
             width: 70%;
             margin: 0 auto;
+            padding: 5% 5%;
         }
-        input{
+        input textarea{
             border-top: 3px solid black;
         }
 
     </style>
 </head>
 <body>
-    <div class="container mt-5 main-container" >
+    <div class="container mt-5 main-container"  style="border: 15px solid darkgrey">
     <p class="fw-bold" >bassic info</p>
 <hr>
 <table class="table table-borderless">
@@ -122,52 +123,39 @@ Islands", "Brunei",
                 ?>
             </select>
         </td>
+    <tr class="row align-items-center">
+        <td class="col-2 fw-bold">US Home Phone</td>
+        <td class="col-10"><input type="text" style="width: 100%" value="(234)234-2342"></td>
     </tr>
-
+    <tr class="row align-items-center">
+        <td class="col-2 fw-bold">Photo</td>
+        <td class="col-10"><input type="text" style="width: 100%" value="EmpID9.bmp"></td>
+    </tr>
 </table>
-<table class="table table-borderless">
-    <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
-    </tr>
-    <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
-    </tr>
-    <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
-    </tr>
-    <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
-    </tr>
-    <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
-    </tr>
-    <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
-    </tr>
-    <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
-    </tr>
-    <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
-    </tr>
-    <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
-    </tr>
-    <tr class="row align-items-center">
-        <td class="col-2 fw-bold"></td>
-        <td class="col-10"></td>
-    </tr>
+        <table>
+            <p class="fw-bold">Optional Info</p>
+            <hr>
+            <tr class="row align-items-center">
+                <td class="col-2 fw-bold">Notes</td>
+                <td class="col-10"><textarea name="post_content" id="post_content" rows="10" cols="100" ></textarea>
+                </tr>
+            <tr class="row align-items-center">
+                <td class="col-2 fw-bold">Preferred Shift</td>
+                <td class="col-10">
+                   <input type="checkbox"> regula
+                </tr>
+            <tr class="row align-items-center">
+                <td class="col-2 fw-bold"></td>
+                <td class="col-10">
+                    <input type="checkbox"> Gravy Yard
+            </tr>
+            <tr class="row align-items-center">
+                <td class="col-2 fw-bold">Active?</td>
+                <td class="col-10">
+                    <input type="checkbox">
+            </tr>
+        </table>
 
-</table>
     </div>
 
 </body>
