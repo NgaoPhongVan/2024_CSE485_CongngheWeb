@@ -30,16 +30,12 @@
         }
         .container {
             background-color: #fff;
-            width: 800px;
+            width: 1000px;
         }
         .head {
             border-bottom: 2px solid black;
             padding-top: 30px;
             margin-bottom: 10px;
-        }
-        table, tr, td {
-            /* border: 2px solid black; */
-            /* width: 100%; */
         }
         table {
             width: 100%;
@@ -54,8 +50,9 @@
             margin-top: 10px;
             padding-bottom: 50px;
         }
-        #editor {
-            width: 34vw;
+        .ck-editor__editable {
+            height: 300px;
+            width: 40vw;
         }
     </style>
 </head>
@@ -75,7 +72,7 @@
                     </tr>
                     <tr>
                         <td class="c1">First Name</td>
-                        <td class="c2"><input type="text" value="Anne" style="width: 34vw;"></td>
+                        <td class="c2"><input type="text" value="Anne" style="width: 40vw;"></td>
                     </tr>
 
                     <tr>
@@ -93,23 +90,23 @@
                     </tr>
                     <tr>
                         <td class="c1">Title</td>
-                        <td class="c2"><input type="text" value="Sales Representative" style="width: 34vw;"></td>
+                        <td class="c2"><input type="text" value="Sales Representative" style="width: 40vw;"></td>
                     </tr>
                     <tr>
                         <td class="c1">Suffix</td>
-                        <td class="c2"><input type="text" value="Ms. " style="width: 34vw;"></td>
+                        <td class="c2"><input type="text" value="Ms. " style="width: 40vw;"></td>
                     </tr>
                     <tr>
                         <td class="c1">BirthDate</td>
-                        <td class="c2"><input type="date" name="date" id="" style="width: 34vw;"></td>
+                        <td class="c2"><input type="date" name="date" id="" style="width: 40vw;"></td>
                     </tr>
                     <tr>
                         <td class="c1">HireDate</td>
-                        <td class="c2"><input type="date" name="date" id="" style="width: 34vw;"></td>
+                        <td class="c2"><input type="date" name="date" id="" style="width: 40vw;"></td>
                     </tr>
                     <tr>
                         <td class="c1">SSN # (ifapplicable)</td>
-                        <td class="c2"><input type="text" style="width: 34vw;"></td>
+                        <td class="c2"><input type="text" style="width: 40vw;"></td>
                     </tr>
                     <tr>
                         <td class="c1">Reports</td>
@@ -128,23 +125,23 @@
                 <table>
                     <tr>
                         <td class="c1">Email</td>
-                        <td class="c2"><input type="email" name="email" id="" value="name@example.com" style="width: 34vw;"></td>
+                        <td class="c2"><input type="email" name="email" id="" value="name@example.com" style="width: 40vw;"></td>
                     </tr>
                     <tr>
                         <td class="c1">Address</td>
-                        <td class="c2"><input type="text" value="Anne" style="width: 34vw;" value="7 Houndstooth Rd."></td>
+                        <td class="c2"><input type="text" value="Anne" style="width: 40vw;" value="7 Houndstooth Rd."></td>
                     </tr>
                     <tr>
                         <td class="c1">City</td>
-                        <td class="c2"><input type="text" value="Sales Representative" style="width: 34vw;" value="London"></td>
+                        <td class="c2"><input type="text" value="Sales Representative" style="width: 40vw;" value="London"></td>
                     </tr>
                     <tr>
                         <td class="c1">Region</td>
-                        <td class="c2"><input type="text" value="Ms. " style="width: 34vw;"></td>
+                        <td class="c2"><input type="text" value="Ms. " style="width: 40vw;"></td>
                     </tr>
                     <tr>
                         <td class="c1">Postal Code</td>
-                        <td class="c2"><input type="text" name="date" id="" style="width: 34vw;" value="WG2 7LT"></td>
+                        <td class="c2"><input type="text" name="date" id="" style="width: 40vw;" value="WG2 7LT"></td>
                     </tr>
                     <tr>
                         <td class="c1">Country</td>
@@ -158,11 +155,11 @@
                     </tr>
                     <tr>
                         <td class="c1">US Home Phone</td>
-                        <td class="c2"><input type="phone" style="width: 34vw;" value="(234)234-2342"></td>
+                        <td class="c2"><input type="phone" style="width: 40vw;" value="(234)234-2342"></td>
                     </tr>
                     <tr>
                         <td class="c1">Photo</td>
-                        <td class="c2"><input type="text" style="width: 34vw;" value="EmpID9.bmp"></td>
+                        <td class="c2"><input type="text" style="width: 40vw;" value="EmpID9.bmp"></td>
                     </tr>
                 </table>
             </div>
@@ -200,7 +197,7 @@
                         </tr>
                     <tr>
                         <td class="c1"></td>
-                        <td class="c2"><input type="text" name="" id="" style="width: 34vw;"></td>
+                        <td class="c2"><input type="text" name="" id="" style="width: 40vw;"></td>
                     </tr>
                 </table>
             </div>
