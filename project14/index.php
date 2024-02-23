@@ -168,7 +168,7 @@
                     <tr>
                         <td class="c1">Notes</td>
                         <td class="c2">
-                            <textarea name="my-editor" id="post_content" cols="30" rows="10"></textarea>
+                            <textarea name="post_content" id="post_content" cols="30" rows="10"></textarea>
                         </td>
                         <script type="text/javascript">
                             CKEDITOR.replace( 'post_content', {
