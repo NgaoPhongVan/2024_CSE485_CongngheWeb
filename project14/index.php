@@ -46,6 +46,7 @@
         }
         .c1 {
             width: 30%;
+            font-weight: bold;
         }
         .footer{
             display: flex;
@@ -53,11 +54,14 @@
             margin-top: 10px;
             padding-bottom: 50px;
         }
+        #editor {
+            width: 34vw;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <form action="">
+        <form action="abc.com">
             <div class="head"><b>Basic info</b></div>
             <div class="content">
                 <table>
@@ -168,16 +172,18 @@
                     <tr>
                         <td class="c1">Notes</td>
                         <td class="c2">
-                            <textarea name="post_content" id="post_content" cols="30" rows="10"></textarea>
+                            <textarea name="editor" id="editor"></textarea>
                         </td>
                         <script type="text/javascript">
-                            CKEDITOR.replace( 'post_content', {
-                                height: "100px"
-                            } );
+                            ClassicEditor
+                            .create( document.querySelector( '#editor' ))
+                                .catch( error => {
+                                    console.error( error );
+                                } );
                         </script>
                     </tr>
                     <tr>
-                        <td class="c1">PreFerred shift</td>
+                        <td class="c1">Preferred shift</td>
                         <td class="c2"><input type="checkbox" name="" id="">Regular</td>
                     </tr>
                     <tr>
