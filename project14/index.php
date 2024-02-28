@@ -170,7 +170,7 @@
                         <td class="c1">Notes</td>
                         <td class="c2">
                             <textarea name="editor" id="editor"></textarea>
-                        </td>
+                        </td>7
                         <script type="text/javascript">
                             ClassicEditor
                             .create( document.querySelector( '#editor' ))
