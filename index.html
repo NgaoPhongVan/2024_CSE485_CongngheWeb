@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js"></script>
+    <style>
+        .ck-editor__editable {
+            height: 300px;
+            width: 500px;
+        }
+    </style>
 </head>
 <body>
     <form action="">
@@ -12,11 +18,7 @@
     </form>
     <script type="text/javascript">
         ClassicEditor
-            .create( document.querySelector( '#post_content' ), {
-                toolbar: [ /* your toolbar items */ ],
-                width: '500px',
-                height: '300px'
-            } )
+            .create( document.querySelector( '#post_content' ) )
             .catch( error => {
                 console.error( error );
             } );
