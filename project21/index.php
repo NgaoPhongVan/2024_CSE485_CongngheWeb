@@ -36,7 +36,7 @@
             "imgUrl" => "./assets/images/1 (5).jpeg"
         ],
        ];
-    $itemsPerPage = 1;
+    $itemsPerPage = 2;
     $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
     $totalPages = ceil(count($products) / $itemsPerPage);
     $currentPageItems = array_slice($products, ($currentPage - 1) * $itemsPerPage, $itemsPerPage);
@@ -55,20 +55,15 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./boxicons-2.1.4/boxicons-2.1.4/css/boxicons.min.css">
     <link rel="stylesheet" href="./bootstrap/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
-    <style>
-        img{
-            width: 300px;
-            height: 200px;
-        }
-    </style>
-</head>
 <body>
-    <div class="product-list container-fluid">
-        <?php foreach ($currentPageItems as $product) {
-            echo '<div class="product">';
-            echo '<img src="'.$product['imgUrl'].'" alt="">';
-            echo '<p>'.$product['description'].'</p>';
-        } ?>
+    <div class="container-fluid">
+        <div class="product-list">
+            <?php foreach ($currentPageItems as $product) {
+                echo '<div class="product">';
+                echo '<img src="'.$product['imgUrl'].'" alt="">';
+                echo '<p>'.$product['description'].'</p>';
+            } ?>
+        </div>
     </div>
     <div class="pagination">
         <?php if ($currentPage > 1): ?>
