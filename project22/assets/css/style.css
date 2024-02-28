@@ -1,0 +1,12 @@
+
+p{
+    margin: 0;
+}
+.product-list{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+}
+.product {
+    margin-right: 30px;
+}
