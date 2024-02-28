@@ -1,17 +1,6 @@
-img{
-    width: 400px;
-    height: 200px;
-}
-a{
-    text-decoration: none;
-}
+
 p{
     margin: 0;
-}
-.pagination{
-    width: 130px;
-    display: flex;
-    justify-content: space-between;
 }
 .product-list{
     display: flex;

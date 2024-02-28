@@ -141,7 +141,7 @@
             "imgUrl" => "./assets/images/1 (15).jpg"
         ],
        ];
-    $itemsPerPage = 4;
+    $itemsPerPage = 8;
     $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
     $totalPages = ceil(count($products) / $itemsPerPage);
     $currentPageItems = array_slice($products, ($currentPage - 1) * $itemsPerPage, $itemsPerPage);
@@ -165,15 +165,15 @@
         <div class="product-list">
             <?php foreach ($currentPageItems as $product) {
                 echo '<div class="product">';
-                echo '<img src="'.$product['imgUrl'].'" alt="" style="margin-bottom: 10px; margin-top: 10px">';
+                echo '<img src="'.$product['imgUrl'].'" alt="" style="margin-bottom: 10px; margin-top: 10px; width: 330px; height: 200px;">';
                 echo '<h5>'.$product['name'].'</h5>';
                 echo '<p>'.$product['description'].'</p>';
-                echo '<p>'.$product['price'].'</p>';
+                echo '<p>'.$product['price'].'$</p>';
                 echo '</div>';
             } ?>
         </div>
     </div>
-    <div class="container-fluid pagination" style="width: 150px; display: flex; justify-content: space-between;">
+    <div class="container-fluid pagination" style="width: 170px; display: flex; justify-content: space-between;">
         <?php if ($currentPage > 1): ?>
             <a href="?page=<?php echo $currentPage - 1; ?>" style="text-decoration: none;">Previous</a>
         <?php endif; ?>
