@@ -1,16 +1,23 @@
 img{
-    width: 300px;
+    width: 400px;
     height: 200px;
 }
 a{
     text-decoration: none;
 }
+p{
+    margin: 0;
+}
 .pagination{
-    width: 100px;
+    width: 130px;
     display: flex;
     justify-content: space-between;
 }
 .product-list{
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+}
+.product {
+    margin-right: 30px;
 }
