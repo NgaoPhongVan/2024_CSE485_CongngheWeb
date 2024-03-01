@@ -33,7 +33,7 @@
 
         <ul class="pagination">
             <?php if ($currentPage > 1): ?>
-                <li class="page-item"><a class="page-link" href="?page=<?php echo $currentPage - 1; ?>">Previous</a></li>
+                <li class="page-item">  <a class="page-link" href="?page=<?php echo $currentPage - 1; ?>">Previous</a></li>
             <?php endif; ?>
             <?php for ($i = 1; $i <= $totalPage; $i++): ?>
                     <li class="page-item"><a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
