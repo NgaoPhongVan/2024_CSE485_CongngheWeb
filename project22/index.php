@@ -13,7 +13,7 @@
 <body style="background-color: #e0e0e0">
 
 <div class = "container d-flex justify-content-center" >
-    <form style="background-color: white"  class = "d-flex flex-column p-5" action="update_profile.php" method = "post" enctype="multipart/form-data">
+    <form style="background-color: white"  class = "flex-column d-flex p-5" action="update_profile.php" method = "post" enctype="multipart/form-data">
             <div style="width: 120px ; height: 120px  "  class="image mx-autor mx-auto">
                 <img class = "w-100 h-100 rounded-circle" src="<?php echo isset($_SESSION['avatar'])? $_SESSION['avatar'] : $user['avatar'] ?>" alt="">
             </div>
