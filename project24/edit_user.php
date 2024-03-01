@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $users = [
         [
             "username" => "johndoe",
@@ -30,12 +31,18 @@
             "manage_users" => true,
         ],
     ];
-    session_start();
     if (!isset($_SESSION['user_id']) || !isset($_COOKIE['logged_in']) || 
         $_SESSION['user_role'] !== "admin") {
         header('Location: index.php');
     }
-    // $username = $_GET['username']; // Get username from URL
+    $username = $_GET['username']; // Get username from URL
+    foreach($users as $user) {
+        if($user['username'] === $username) {
+            $name1 = $user['name'];
+            $email = $user['email'];
+            $image1 = $user['image'];
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -110,13 +117,13 @@
         <form action="update_profile.php" method="post" enctype="multipart/form-data" class="d-flex flex-column bg-light h-100 p-5">
             <h2 class="pb-2">Profile Information</h2>
             <div class="image text-center mx-auto" style="width: 120px; height: 120px">
-                <img class="w-100 h-100 rounded-circle" src="<?php echo isset($_SESSION['image']) ? $_SESSION['image'] : $users['image']; ?>" alt="">                
+                <img class="w-100 h-100 rounded-circle" src="<?php echo isset($_SESSION['image']) ? $_SESSION['image'] : $image1; ?>" alt="">                
             </div>
             <label for="name">Name:</label>
-            <input type="text" name="name" value="<?php echo isset($_SESSION['name']) ? $_SESSION['name'] : $users['name']; ?>"  required>
+            <input type="text" name="name" value="<?php echo isset($_SESSION['name1']) ? $_SESSION['name'] : $name1; ?>"  required>
             <br>
             <label for="email">Email:</label>
-            <input type="email" name="email" value="<?php echo $users['email']; ?>" disabled>
+            <input type="email" name="email" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : $email;?>" disabled>
             <br>
             <label for="image">Avatar:</label>
             <input type="file" name="avatar" accept="images/*">
