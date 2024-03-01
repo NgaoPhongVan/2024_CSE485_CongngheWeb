@@ -6,7 +6,6 @@
         "name" => "John Doe",
         "email" => "johndoe@example.com"
         ],
-        // Add more users...
     ];
 ?>
 
@@ -15,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>project24</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="./boxicons-2.1.4/boxicons-2.1.4/css/boxicons.min.css">
     <link rel="stylesheet" href="./bootstrap/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">

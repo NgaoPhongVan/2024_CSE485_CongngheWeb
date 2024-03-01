@@ -164,10 +164,10 @@
     <div class="hihi container-fluid">
         <div class="product-list">
             <?php foreach ($currentPageItems as $product) {
-                echo '<div class="product">';
-                echo '<img src="'.$product['imgUrl'].'" alt="" style="margin-bottom: 10px; margin-top: 10px; width: 330px; height: 200px;">';
+                echo '<div class="product" style="width: 330px">';
+                echo '<img src="'.$product['imgUrl'].'" alt="" style="margin-bottom: 10px; margin-top: 10px; height: 200px;" class="w-100">';
                 echo '<h5>'.$product['name'].'</h5>';
-                echo '<p>'.$product['description'].'</p>';
+                echo '<p class="mw-100">'.$product['description'].'</p>';
                 echo '<p>'.$product['price'].'$</p>';
                 echo '</div>';
             } ?>
@@ -179,7 +179,7 @@
         <?php endif; ?>
         <?php for ($i = 1; $i <= $totalPages; $i++): ?>
             <?php if ($i == $currentPage): ?>
-                <span class="active"><?php echo $i; ?></span>
+                <span class="active"><b><?php echo $i; ?></b></span>
             <?php else: ?>
                 <a href="?page=<?php echo $i; ?>" style="text-decoration: none;"><?php echo $i; ?></a>
             <?php endif; ?>

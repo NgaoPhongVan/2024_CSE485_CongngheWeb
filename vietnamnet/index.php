@@ -1,10 +1,10 @@
 <?php
-require_once 'functions.php';
-$categories = getAllCategories();
-//echo '<pre>';
-//print_r($categories);
-//echo '</pre>';
-$news = getTopNews();
+    require_once 'functions.php';
+    $categories = getAllCategories();
+    //echo '<pre>';
+    //print_r($categories);
+    //echo '</pre>';
+    $news = getTopNews();
 ?>
 
 

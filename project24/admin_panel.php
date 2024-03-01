@@ -38,12 +38,33 @@
     }
     // ... display admin panel content
     // List users (implement pagination or filtering if needed)
-    echo "<h2>Users</h2>";
-    echo "<table border='1'>";
-    echo "<tr><th>Username</th><th>Name</th><th>Email</th><th>Role</th><th>Actions</th></tr>";
+    echo<<<EOT
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./boxicons-2.1.4/boxicons-2.1.4/css/boxicons.min.css">
+        <link rel="stylesheet" href="./bootstrap/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container d-flex justify-content-center">
+            <table class="table table-striped table-hover w-75">
+                <thead>
+                    <tr>
+                        <th scope="col">User</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+EOT;
     foreach ($users as $u) {
         echo "<tr>";
-        echo "<td>" . $u['username'] . "</td>";
+        echo "<th scope=\"row\">" . $u['username'] . "</th>";
         echo "<td>" . $u['name'] . "</td>";
         echo "<td>" . $u['email'] . "</td>";
         echo "<td>" . $u['role'] . "</td>";
@@ -57,5 +78,11 @@
         echo "</td>";
         echo "</tr>";
     }
-    echo "</table>";
+    echo<<<EOT
+    </tbody>
+            </table>
+        </div>
+    </body>
+    </html>
+EOT;            
 ?>
