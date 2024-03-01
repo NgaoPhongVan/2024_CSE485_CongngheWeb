@@ -121,6 +121,7 @@ foreach ($courses as $course) {
 }
 echo '</div>';
 ?>
+
 </body>
 </html>
 
