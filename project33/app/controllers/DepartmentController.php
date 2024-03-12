@@ -1,52 +1,43 @@
 <?php
-require_once ROOT.'../service/departmentservice.php';
-class DepartmentController{
-    public function index(){
-        $departmentservice = new departmentservice();
-        $departments = $departmentservice->Getalldepartment();
-        include ROOT.'../view/departments/index.php';
-    }
-    public function AddDepartment(){
-        $id = $_POST['id'];
-        $name = $_POST['name'];
-        $phone = $_POST['phone'];
-        $address = $_POST['address'];
-        $email = $_POST['email'];
-        $AddDepartment = new departmentservice();
-        $AddDepart = $AddDepartment->AddDepartment($id,$name,$phone,$address,$email);
-        header('location:../app/index.php?controller=department&action=index');
-    }
+require_once('../services/DepartmentServices.php');
+class DepartmentController
+{
+  private $departmentController;
+  public function __construct()
+  {
+    $this->departmentController = new DepartmentServices();
+  }
+  public function index()
+  {
+    $departments = $this->departmentController->getAllDepartment();
+    include_once '../views/departments/index.blade.php';
+  }
 
-    public function getDepartmentByID()
+  public function DetailDepartmentByID()
+  {
+      $id = $_GET['id'];
+      echo $id;
+      include "../views/auth/detaildepartment.php";
+      $detaildepartment = $this->departmentController->getDetailDepartmentByID($id);
+  }
+    public function ViewUpdateDepartment()
     {
         $id = $_GET['id'];
-        $getDepartmentByID = new departmentservice();
-        $Getdepartment = $getDepartmentByID->getDepartmentByID($id);
-        include ROOT.'../view/departments/updatedepartment.php';
+        $viewdepartment = $this->departmentController->getDetailDepartmentByID($id);
+        include "../views/auth/updatedepartment.php";
     }
-
-    public function DetailDepartmentByID()
-    {
-        $id = $_GET['id'];
-        $getDepartmentByID = new departmentservice();
-        $Getdepartment = $getDepartmentByID->getDepartmentByID($id);
-        include ROOT.'../view/departments/detaildepartment.php';
-    }
-    public function UpdateDepartment()
-    {
-        $id = $_POST['id'];
-        $name = $_POST['name'];
-        $phone = $_POST['phone'];
-        $address = $_POST['address'];
-        $email = $_POST['email'];
-        $updateDepartment = new departmentservice();
-        $UpdateDepar = $updateDepartment->updateDepartment($id , $name , $phone , $address, $email);
-        header('location:../app/index.php?controller=department&action=index');
-    }
-    public function DeleteDepartmentByID(){
-        $id = $_GET['id'];
-        $DeleteDepartmentByID = new departmentservice();
-        $DeleteDepartment = $DeleteDepartmentByID->DeleteDepartmentById($id);
-        header('location:../app/index.php?controller=department&action=index');
+  public function UpdateDepartmentByID(){
+      $id = $_POST['id'];
+      $name = $_POST['name'];
+      $address = $_POST['address'];
+      $phone = $_POST['phone'];
+      echo $id;
+      echo $name;
+      $updatedepartment = $this->departmentController->UpdateDepartmentByID($id, $name, $address, $phone);
+  }
+    public function DeleteDepartment(){
+      $id = $_GET['id'];
+      $deletedepartment = $this->departmentController->DeleteDepartment($id);
+      header('location:../public/index.php?c=department&a=index');
     }
 }
