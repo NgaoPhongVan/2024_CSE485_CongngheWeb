@@ -250,7 +250,9 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  ...
+                  <p style="font-size: 18px" class="m-0 ms-4 mb-1"><b>Name:</b> <?= $employee->getFullName() ?></p>
+                  <p style="font-size: 17px; white-space: nowrap; overflow: hidden;text-overflow: ellipsis; max-width: 200px;" class="m-0 ms-4 mb-1"><b>About: </b><?= $employee->getPosition() ?></p>
+                  <p style="font-size: 17px; white-space: nowrap; overflow: hidden;text-overflow: ellipsis; max-width: 200px;" class="m-0 ms-4 mb-1"><b>About: </b><?= $employee->get ?></p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

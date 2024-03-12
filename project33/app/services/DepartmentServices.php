@@ -28,6 +28,7 @@ class DepartmentServices
             error_log("Error in getAllDepartment: " . $e->getMessage());
             return [];
         }
+
     }
 
     public function getDetailDepartmentByID($id){
@@ -89,6 +90,25 @@ class DepartmentServices
             $e->getMessage();
             $conn->rollBack();
         }
+    }
+    public function SearchDepartment($search)
+    {
+        $conn = $this->dbConnection->getConnection();
+        $sql = "SELECT * FROM departments WHERE DepartmentID = :search OR DepartmentName = :search OR Phone = :search";
+        try {
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':search', $search , PDO::PARAM_STR);
+            $stmt->execute();
+            $searchdepratments = [];
+            while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                $searchdepratment = new department($row['DepartmentID'], $row['DepartmentName'], $row['Address'], $row['Email'], $row['Phone'], $row['Logo'], $row['Website'], $row['ParentDepartmentID']);
+                $searchdepratments[] = $searchdepratment;
+            }
+            return $searchdepratments;
+        }catch(PDOException $e){
+            $e->getMessage();
+        }
+
     }
 
 

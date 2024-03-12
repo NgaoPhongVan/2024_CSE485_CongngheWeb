@@ -9,7 +9,14 @@ class DepartmentController
   }
   public function index()
   {
-    $departments = $this->departmentController->getAllDepartment();
+
+      if(!empty($_POST['search'])){
+          $departments = $this->departmentController->SearchDepartment($_POST['search']);
+      }else{
+          $departments = $this->departmentController->getAllDepartment();
+      }
+
+
     include_once '../views/departments/index.blade.php';
   }
 
@@ -39,5 +46,12 @@ class DepartmentController
       $id = $_GET['id'];
       $deletedepartment = $this->departmentController->DeleteDepartment($id);
       header('location:../public/index.php?c=department&a=index');
+    }
+
+    public function SearchDepartment()
+    {
+//        $search = $_POST['search'];
+//        echo $search;
+//        $search = $this->departmentController->SearchDepartment($search);
     }
 }
