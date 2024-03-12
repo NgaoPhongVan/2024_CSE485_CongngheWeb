@@ -4,7 +4,6 @@ require_once '../app/config/config.php';
 $controller = isset($_GET['controller'])? $_GET['controller'] : 'Department';
 $action = isset($_GET['action'])? $_GET['action'] : 'index';
 
-echo $action;
 
 //viet hoa chu cai dau cua $controller
 $controller = ucfirst($controller);

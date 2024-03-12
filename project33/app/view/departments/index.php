@@ -1,6 +1,3 @@
-<?php
-require_once '../app/config/config.php';
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,12 +9,12 @@ require_once '../app/config/config.php';
     <link rel="stylesheet" href='./bootstrap/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css'>
 </head>
 <body>
-    <div class = "container-fluid">
+    <div class = "container-fluid mt-5">
         <div class = "row">
             <div class = "col-md">
 <!--                ./view/departments/adddepartment.php-->
                 <table class = "table">
-                    <a href="index.php?controller=Department&action=AppDepartment">them</a>
+                    <a class = "btn btn-primary" href="view/departments/adddepartment.php">them</a>
                     <thead>
                     <tr>
                         <th>id</th>
@@ -41,7 +38,9 @@ require_once '../app/config/config.php';
                            <td><?php echo $depart -> getLogo() ?></td>
                            <td><?php echo $depart -> getWebsite() ?></td>
                            <td><?php echo $depart -> getParentDepartment() ?></td>
-                           <td></td>
+                           <td><a class = "btn btn-primary" href="../app/index.php?controller=Department&action=DetailDepartmentByID&id=<?php echo $depart->getDepartmentID()?>">chi tiết</a></td>
+                           <td><a class = "btn btn-primary" href="../app/index.php?controller=Department&action=getDepartmentByID&id=<?php echo $depart->getDepartmentID()?>">sửa</a></td>
+                           <td><a class = "btn btn-primary" href="../app/index.php?controller=Department&action=DeleteDepartmentByID&id=<?php echo $depart->getDepartmentID() ?> ">xóa</a></td>
                        </tr>
                        <?php endforeach; ?>
 
