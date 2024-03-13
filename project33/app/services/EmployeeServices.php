@@ -29,4 +29,24 @@ class EmployeeServices
             return [];
         }
     }
+
+    public function searchEmployee($search)
+    {
+        try {
+            $conn = $this->dbConnection->getConnection();
+            $sql = "SELECT * FROM employees WHERE FullName LIKE :search OR Address LIKE :search OR MobilePhone LIKE :search OR Position LIKE :search ";
+            $stmt = $conn->prepare($sql);
+            $search = '%'.$search.'%';
+            $stmt->bindParam('search' , $search , PDO::PARAM_STR);
+            $stmt->execute();
+            $employees = [];
+            while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                $employee = new Employee($row['EmployeeID'], $row['FullName'], $row['Address'], $row['Email'], $row['MobilePhone'], $row['Position'], $row['DepartmentID']);
+                $employees[] = $employee;
+            }
+            return $employees;
+        }catch(PDOException $e){
+            $e->getMessage();
+        }
+    }
   }

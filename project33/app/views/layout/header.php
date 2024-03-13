@@ -142,59 +142,44 @@
                     </a>
                 </div>
             </div>
-        </div>
-        <div class="container-fluid bg-white">
-            <div class="container bg-white">
-                <div class="head2 d-flex">
-                    <div class="img_head" style="width: 90px; height: 70px">
-                        <img class="w-100 h-100" src="assets/images/logoicon-removebg-preview.png" alt="">
-                    </div>
-                    <div class="text-content-head d-flex justify-content-between fw-bold" style="font-size: 15.5px">
-                        <a href="" class="text-decoration-none mx-2" style="line-height: 70px;">
-                            <p class="m-0" style="color: #555555;">GIỚI THIỆU</p>
-                        </a>
-                        <a href="" class="text-decoration-none mx-2" style="line-height: 70px;">
-                            <p class="m-0" style="color: #555555;">TIN TỨC & THÔNG BÁO</p>
-                        </a>
-                        <a href="" class="text-decoration-none mx-2" style="line-height: 70px;">
-                            <p class="m-0" style="color: #555555;">TUYỂN SINH</p>
-                        </a>
-                        <a href="" class="text-decoration-none mx-2" style="line-height: 70px;">
-                            <p class="m-0" style="color: #555555;">ĐÀO TẠO</p>
-                        </a>
-                        <a href="" class="text-decoration-none mx-2" style="line-height: 70px;">
-                            <p class="m-0" style="color: #555555;">NGHIÊN CỨU</p>
-                        </a>
-                        <a href="" class="text-decoration-none mx-2" style="line-height: 70px;">
-                            <p class="m-0" style="color: #555555;">ĐỐI NGOẠI</p>
-                        </a>
-                        <a href="" class="text-decoration-none mx-2" style="line-height: 70px;">
-                            <p class="m-0" style="color: #555555;">VĂN BẢN</p>
-                        </a>
-                        <a href="" class="text-decoration-none mx-2" style="line-height: 70px;">
-                            <p class="m-0" style="color: #555555;">SINH VIÊN</p>
-                        </a>
-                        <a href="" class="text-decoration-none mx-2" style="line-height: 70px;">
-                            <p class="m-0" style="color: #555555;">LIÊN HỆ</p>
-                        </a>
-                        <div class="mt-2 ms-3">
-                            <form action="../../app/public/index.php?c=department&a=index" method="post" class="form">
-                                <button>
-                                    <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
-                                        <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </button>
-                                <input class="input" placeholder="Type your text" name = "search" required="" type="text">
-                                <button class="reset" type="reset">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12">
-                                        </path>
-                                    </svg>
-                                </button>
-                            </form>
+            <div class="container-fluid bg-white">
+                <div class="container bg-white">
+                    <div class="head2 d-flex">
+                        <div class="img_head" style="width: 90px; height: 70px">
+                            <img class="w-100 h-100" src="assets/images/logoicon-removebg-preview.png" alt="">
+                        </div>
+                        <div class="text-content-head d-flex justify-content-between fw-bold" style="font-size: 15.5px">
+                            <a href="" class="text-decoration-none mx-2" style="line-height: 70px;">
+                                <p class="m-0" style="color: #555555;">GIỚI THIỆU</p>
+                            </a>
+                            <a href="" class="text-decoration-none mx-2" style="line-height: 70px;">
+                                <p class="m-0" style="color: #555555;">TIN TỨC & THÔNG BÁO</p>
+                            </a>
+                            <a href="" class="text-decoration-none mx-2" style="line-height: 70px;">
+                                <p class="m-0" style="color: #555555;">TUYỂN SINH</p>
+                            </a>
+                            <a href="" class="text-decoration-none mx-2" style="line-height: 70px;">
+                                <p class="m-0" style="color: #555555;">ĐÀO TẠO</p>
+                            </a>
+                            <a href="" class="text-decoration-none mx-2" style="line-height: 70px;">
+                                <p class="m-0" style="color: #555555;">NGHIÊN CỨU</p>
+                            </a>
+                            <a href="" class="text-decoration-none mx-2" style="line-height: 70px;">
+                                <p class="m-0" style="color: #555555;">ĐỐI NGOẠI</p>
+                            </a>
+                            <a href="" class="text-decoration-none mx-2" style="line-height: 70px;">
+                                <p class="m-0" style="color: #555555;">VĂN BẢN</p>
+                            </a>
+                            <a href="" class="text-decoration-none mx-2" style="line-height: 70px;">
+                                <p class="m-0" style="color: #555555;">SINH VIÊN</p>
+                            </a>
+                            <a href="" class="text-decoration-none mx-2" style="line-height: 70px;">
+                                <p class="m-0" style="color: #555555;">LIÊN HỆ</p>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </header>

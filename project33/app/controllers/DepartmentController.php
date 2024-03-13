@@ -9,7 +9,6 @@ class DepartmentController
   }
   public function index()
   {
-
       if(!empty($_POST['search'])){
           $departments = $this->departmentController->SearchDepartment($_POST['search']);
       }else{

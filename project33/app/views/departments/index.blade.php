@@ -147,6 +147,7 @@ session_start();
     <?php
     include_once '../views/layout/header.php';
     ?>
+
     <div class="container-fluid mb-5 p-0">
         <!-- <img class="w-100" src="../public/assets/images/snapedit_1709546479145.jpeg" alt=""> -->
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -178,6 +179,22 @@ session_start();
     </div>
     <div style="margin-right: 170px; margin-left: 170px">
         <h4 style="color: #58b0e0" class="fw-bold">DANH BẠ ĐIỆN THOẠI ĐƠN VỊ</h4>
+        <div class=" ms-3 justify-content-end d-flex">
+            <form action="../../app/public/index.php?c=department&a=index" method="post" class="form">
+                <button>
+                    <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
+                        <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+                <input class="input" placeholder="Type your text" name = "search" name = "searchemployees" required="" type="text">
+                <button class="reset" type="reset">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </form>
+        </div>
         <table class="container table table-bordered table-striped mt-3 mb-5">
             <thead>
                 <tr style="background-color: #017cff; color: white; font-size: 16px">

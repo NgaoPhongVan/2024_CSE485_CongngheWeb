@@ -94,10 +94,11 @@ class DepartmentServices
     public function SearchDepartment($search)
     {
         $conn = $this->dbConnection->getConnection();
-        $sql = "SELECT * FROM departments WHERE DepartmentID = :search OR DepartmentName = :search OR Phone = :search";
+        $sql = "SELECT * FROM departments WHERE DepartmentID LIKE :search OR DepartmentName LIKE :search OR Phone LIKE :search";
         try {
             $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':search', $search , PDO::PARAM_STR);
+            $search = '%'.$search.'%';
+            $stmt->bindParam(':search', $search  , PDO::PARAM_STR);
             $stmt->execute();
             $searchdepratments = [];
             while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
