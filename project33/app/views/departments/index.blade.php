@@ -8,7 +8,8 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Danh bạ đơn vị</title>
+    <link rel="icon" type="" href="assets/images/logoicon-removebg-preview.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <style>
@@ -157,7 +158,7 @@ session_start();
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active" style="height: 550px">
-                    <img src="../public/assets/images/1.jpeg" class="d-block h-100 w-100" alt="...">
+                    <img src="../public/assets/images/1.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item" style="height: 550px">
                     <img src="../public/assets/images/12.jpg" class="d-block w-100" alt="...">
@@ -177,11 +178,13 @@ session_start();
         </div>
     </div>
     <div style="margin-right: 170px; margin-left: 170px">
-        <h4 style="color: #58b0e0" class="fw-bold">DANH BẠ ĐIỆN THOẠI ĐƠN VỊ</h4>
+        <div class="d-flex justify-content-between">
+            <h4 style="color: #58b0e0" class="fw-bold">DANH BẠ ĐIỆN THOẠI ĐƠN VỊ</h4>
+        </div>
         <table class="container table table-bordered table-striped mt-3 mb-5">
             <thead>
                 <tr style="background-color: #017cff; color: white; font-size: 16px">
-                    <th scope="col">ID</th>
+                    <th scope="col">STT</th>
                     <th scope="col">TÊN ĐƠN VỊ</th>
                     <th scope="col">ĐỊA CHỈ</th>
                     <th scope="col">SỐ ĐIỆN THOẠI</th>
@@ -191,21 +194,22 @@ session_start();
                 </tr>
             </thead>
             <tbody>
+                <?php $i = 1 ?>
                 <?php foreach ($departments as $department) : ?>
                     <tr>
-                        <td><?= $department->getDepartmentID() ?></td>
+                        <td><?= $i++ ?></td>
                         <td><?= $department->getDepartmentName() ?></td>
                         <td><?= $department->getAddress() ?></td>
                         <td><?= $department->getPhone() ?></td>
-                        <?php if ($_SESSION['Username'] == 'admin') : ?>
+                        <?php if ($_SESSION['Role'] == 'admin') : ?>
                             <td>
-                                <a class='m-2' href='http://localhost/2024_CSE485_CongngheWeb/project33/app/public/?route=show-user&UserID=" . $item->getUsername() . "'>
+                                <a class='m-2' href='<?php DOMAIN.'/?c=deparment&....'?>'>
                                     <i class='bi bi-eye-fill'></i>
                                 </a>
-                                <a class='m-2' href='http://localhost/2024_CSE485_CongngheWeb/project33/app/public/?route=edit-user&UserID=" . $item->getUsername() . "'>
+                                <a class='m-2' href='<?php DOMAIN.'/?c=deparment&....'?>'>
                                     <i class='bi bi-pencil-fill'></i>
                                 </a>
-                                <a class='m-2' href='http://localhost/2024_CSE485_CongngheWeb/project33/app/public/?route=delete-user&UserID=" . $item->getUsername() . "' onclick='return confirmDelete()'>
+                                <a class='m-2' href='<?php DOMAIN.'/?c=deparment&....'?>' onclick='return confirmDelete()'>
                                     <i class='bi bi-trash-fill'></i>
                                 </a>
                             </td>
@@ -215,12 +219,9 @@ session_start();
             </tbody>
         </table>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
-
     <script>
         function confirmDelete() {
-            return confirm('Are you sure you want to delete this user?');
+            return confirm('Bạn có muốn xóa đơn vị này?');
         }
     </script>
 

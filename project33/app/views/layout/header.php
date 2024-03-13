@@ -114,32 +114,52 @@
         <div class="container-fluid p-0 m-0" style="background-color: #1f2636;">
             <div style="background-color: #1f2636" class="head px-4 container d-flex justify-content-between">
                 <div class="text-left-head d-flex small" style="line-height: 40px; font-size: 16px">
-                    <a href="<?= DOMAIN.'/?c=department'?>" class="text-decoration-none text-white">
-                        <p class="text-head <?php if ($_GET['c']=='department'): ?> text-white <?php endif ?>" style="margin-bottom: 0px; margin-right: 20px; ">Danh bạ đơn vị</p>
+                    <a href="<?= DOMAIN . '/?c=department' ?>" class="text-decoration-none text-white">
+                        <p class="text-head <?php if ($_GET['c'] == 'department') : ?> text-white <?php endif ?>" style="margin-bottom: 0px; margin-right: 20px; ">Danh bạ đơn vị</p>
                     </a>
-                    <a href="<?= DOMAIN.'/?c=employee'?>" class="text-decoration-none">
-                        <p class="text-head <?php if ($_GET['c']=='employee'): ?> text-white <?php endif ?>" style="margin-bottom: 0px; margin-right: 20px;">Danh bạ cá nhân</p>
+                    <a href="<?= DOMAIN . '/?c=employee' ?>" class="text-decoration-none">
+                        <p class="text-head <?php if ($_GET['c'] == 'employee') : ?> text-white <?php endif ?>" style="margin-bottom: 0px; margin-right: 20px;">Danh bạ cá nhân</p>
                     </a>
-                    <a href="" class="text-decoration-none ">
-                        <p class="text-head" style="margin-bottom: 0px; margin-right: 20px;">Về TLUers</p>
-                    </a>
+                    <?php if ($_SESSION['Role'] == "admin") : ?>
+                        <a href="<?= DOMAIN . '/?c=user' ?>" class="text-decoration-none">
+                            <p class="text-head <?php if ($_GET['c'] == 'user') : ?> text-white <?php endif ?>" style="margin-bottom: 0px; margin-right: 20px;">Quản lý tài khoản</p>
+                        </a>
+                    <?php endif ?>
                 </div>
-                <div class="text-left-head text-white d-flex small" style="line-height: 40px; font-size: 16px">
-                    <a href="" class="text-decoration-none">
-                        <p class="text-head" style="margin-bottom: 0px; margin-right: 20px;">Tuyển dụng</p>
-                    </a>
-                    <a href="" class="text-decoration-none">
-                        <p class="text-head" style="margin-bottom: 0px; margin-right: 20px;">Điểm giao dịch</p>
-                    </a>
-                    <a href="login.php" class="text-decoration-none">
-                        <p class="text-head" style="margin-bottom: 0px; margin-right: 20px;">Đăng nhập</p>
-                    </a>
-                    <a href="" class="text-white text-decoration-none">
-                        <p class="text-head text-white" style="margin-bottom: 0px; margin-right: 20px; font-weight: bold">VI</p>
-                    </a>
-                    <a href="" class="text-decoration-none">
-                        <p class="text-head" style="margin-bottom: 0px; margin-right: 20px;">EN</p>
-                    </a>
+                <div class="d-flex">
+                    <div class="text-left-head text-white d-flex small" style="line-height: 40px; font-size: 16px">
+                        <a href="" class="text-decoration-none">
+                            <p class="text-head" style="margin-bottom: 0px; margin-right: 20px;">Tuyển dụng</p>
+                        </a>
+                        <a href="" class="text-decoration-none">
+                            <p class="text-head" style="margin-bottom: 0px; margin-right: 20px;">Điểm giao dịch</p>
+                        </a>
+                        <a href="<?= DOMAIN . '/?c=login&a=logout' ?>" class="text-decoration-none">
+                            <p class="text-head" style="margin-bottom: 0px; margin-right: 20px;">Đăng xuất</p>
+                        </a>
+                        <a href="" class="text-white text-decoration-none">
+                            <p class="text-head text-white" style="margin-bottom: 0px; margin-right: 20px; font-weight: bold">VI</p>
+                        </a>
+                        <a href="" class="text-decoration-none">
+                            <p class="text-head" style="margin-bottom: 0px; margin-right: 20px;">EN</p>
+                        </a>
+                    </div>
+                    <div class="dropdown" style="z-index:99999">
+                        <button class="p-1 btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img style="width:30px; height:30px" class="rounded-circle" src="../public/assets/images/avata.jpeg" alt="">
+                        </button>
+                        <ul class="dropdown-menu bg-dark text-white p-3" style="min-width: 300px" aria-labelledby="dropdownMenuButton1">
+                            <div class="row" style="background-color:#303030">
+                                <div class="col-sm-2 mt-1">
+                                    <img style="width:37px; height:37px" class="rounded-circle" src="../public/assets/images/avata.jpeg" alt="">
+                                </div>
+                                <div class="col-sm-10">
+                                    <p class="m-0" style="font-size: 17px; white-space: nowrap; overflow: hidden;text-overflow: ellipsis; max-width: 300px;"><?php if ($_SESSION['Role'] == "regular") { ?> Nhân viên <?php } else { ?> Quản trị viên <?php } ?>: <?= $_SESSION['FullName'] ?></p>
+                                    <p class="m-0" style="white-space: nowrap; overflow: hidden;text-overflow: ellipsis; max-width: 300px;"><?= $_SESSION['Email'] ?></p>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

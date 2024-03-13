@@ -1,7 +1,7 @@
 <?php
 require_once('../libs/DBConnection.php');
 require_once('../models/User.php');
-
+require_once('../models/Employee.php');
 class UserServices
 {
     private $dbConnection;
@@ -66,6 +66,20 @@ class UserServices
             error_log("Error in getUserByID: " . $e->getMessage());
             return null;
         }
+    }
+
+    public function getEmployeeByID($EmployeeID) {
+        $conn = $this->dbConnection->getConnection();
+        $sql = "SELECT * FROM employees WHERE EmployeeID = :EmployeeID";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam((':EmployeeID'), $EmployeeID);
+        $stmt->execute();
+        $row = $stmt->fetch();
+        $employee = [];
+        if($row) {
+            $employee = new Employee($row['EmployeeID'], $row['FullName'], $row['Address'], $row['Email'], $row['MobilePhone'], $row['Position'], $row['DepartmentID']);
+        }
+        return $employee;
     }
 
     public function updateUser($Username, $Password, $Role, $EmployeeID)

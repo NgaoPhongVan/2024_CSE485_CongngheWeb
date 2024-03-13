@@ -140,6 +140,7 @@ $products = [
         "description" => "A comfortable and stylish Huhu.",
         "imgUrl" => "./assets/images/1 (15).jpg"
     ],
+    
 ];
 $itemsPerPage = 8;
 $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -176,19 +177,25 @@ $currentPageItems = array_slice($products, ($currentPage - 1) * $itemsPerPage, $
         </div>
     </div>
     <div class="container-fluid pagination" style="width: 170px; display: flex; justify-content: space-between;">
-        <?php if ($currentPage > 1) : ?>
-            <a href="?page=<?php echo $currentPage - 1; ?>" style="text-decoration: none;">Previous</a>
-        <?php endif; ?>
-        <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
-            <?php if ($i == $currentPage) : ?>
-                <span class="active"><b><?php echo $i; ?></b></span>
-            <?php else : ?>
-                <a href="?page=<?php echo $i; ?>" style="text-decoration: none;"><?php echo $i; ?></a>
-            <?php endif; ?>
-        <?php endfor; ?>
-        <?php if ($currentPage < $totalPages) : ?>
-            <a href="?page=<?php echo $currentPage + 1; ?>" style="text-decoration: none;">Next</a>
-        <?php endif; ?>
+        <nav aria-label="...">
+            <ul class="pagination">
+                <li class="page-item <?php if($currentPage<=1):?> disabled <?php endif ?>">
+                    <a class="page-link" href="?page=<?php echo $currentPage - 1; ?>" tabindex="-1" aria-disabled="false">Previous</a>
+                </li>
+                <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
+                    <?php if ($i == $currentPage) : ?>
+                        <li class="page-item active" aria-current="page">
+                            <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                        </li>
+                    <?php else : ?>
+                        <li class="page-item"><a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+                    <?php endif; ?>
+                <?php endfor; ?>
+                <li class="page-item <?php if ($currentPage >= $totalPages):?> disabled <?php endif ?>">
+                    <a class="page-link" href="?page=<?php echo $currentPage + 1; ?>">Next</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </body>
 

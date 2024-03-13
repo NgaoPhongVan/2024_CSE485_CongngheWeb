@@ -10,7 +10,7 @@ class UserController
     }
     public function index()
     {
-        $user = $this->userController->getAllUser();
+        $users = $this->userController->getAllUser();
         include_once '../views/users/index.blade.php';
     }
 

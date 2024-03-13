@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +8,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Danh bạ cá nhân</title>
-  <link rel="icon" type="" href="assets/images/logoicon-removebg-preview.png">
+  <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <style>
@@ -155,13 +157,13 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active" style="height: 550px">
-          <img src="../public/assets/images/1.jpeg" class="d-block w-100" alt="..." style="height: auto;">
+          <img src="../public/assets/images/1.jpeg" class="d-block h-100 w-100" alt="...">
         </div>
         <div class="carousel-item" style="height: 550px">
           <img src="../public/assets/images/12.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item" style="height: 550px">
-          <img src="../public/assets/images/1.jpeg" class="d-block w-100" alt="...">
+          <img src="../public/assets/images/13.jpg" class="d-block w-100" alt="...">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -174,95 +176,48 @@
       </button>
     </div>
   </div>
-  <div class="mb-4" style="margin-right: 160px; margin-left: 160px">
-    <h4 style="color: #58b0e0" class="fw-bold">DANH BẠ ĐIỆN THOẠI CÁ NHÂN</h4>
+  <div style="margin-right: 170px; margin-left: 170px">
+    <h4 style="color: #58b0e0" class="fw-bold">DANH MỤC QUẢN LÝ TÀI KHOẢN</h4>
+    <table class="container table table-bordered table-striped mt-3 mb-5">
+      <thead>
+        <tr style="background-color: #017cff; color: white; font-size: 16px">
+          <th scope="col">STT</th>
+          <th scope="col">TÊN NGƯỜI DÙNG</th>
+          <th scope="col">MẬT KHẨU</th>
+          <th scope="col">QUYỀN QUẢN TRỊ</th>
+          <th scope="col">THAO TÁC</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php $i = 1 ?>
+        <?php foreach ($users as $user) : ?>
+          <tr>
+            <td><?= $i++ ?></td>
+            <td><?= $user->getUsername() ?></td>
+            <td><?= $user->getPassword() ?></td>
+            <td><?= $user->getRole() ?></td>
+            <td>
+              <a class='m-2' href='<?php DOMAIN.'/?c=employee&....'?>'>
+                <i class='bi bi-eye-fill'></i>
+              </a>
+              <a class='m-2' href='<?php DOMAIN.'/?c=employee&....'?>'>
+                <i class='bi bi-pencil-fill'></i>
+              </a>
+              <a class='m-2' href='<?php DOMAIN.'/?c=employee&....'?>' onclick='return confirmDelete()'>
+                <i class='bi bi-trash-fill'></i>
+              </a>
+            </td>
+          </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
   </div>
-  <div class="p-0 d-flex gap-5 justify-content-between flex-wrap mb-5" style="margin-right: 160px; margin-left: 160px">
-    <?php foreach ($employees as $employee) : ?>
-      <div style="width: 340px;" class="d-flex flex-column">
-        <div class="head-content row rounded-top-3 shadow p-3 bg-body rounded">
-          <div class="col-sm-8 pb-0 px-3 py-2">
-            <p style="font-size: 20px">Nhân viên</p>
-          </div>
-          <div class="col-sm-4"></div>
-        </div>
-        <div style="background-color: white;" class="main-content row py-1 shadow p-3 bg-body rounded">
-          <div class="col-sm-8 p-0">
-            <p style="font-size: 18px" class="m-0 ms-4 mb-1"><b><?= $employee->getFullName() ?></b></p>
-            <p style="font-size: 17px; white-space: nowrap; overflow: hidden;text-overflow: ellipsis; max-width: 200px;" class="m-0 ms-4 mb-1"><b>About: </b><?= $employee->getPosition() ?></p>
-            <p style="font-size: 17px; white-space: nowrap; overflow: hidden;text-overflow: ellipsis; max-width: 200px;" class="m-0 ms-4 mb-1"><b>Address: </b><?= $employee->getAddress() ?></p>
-          </div>
-          <div class="col-sm-4 p-0 ">
-            <img style="width:90px; height:90px" class="rounded-circle" src="../public/assets/images/avata.jpeg" alt="">
-          </div>
-        </div>
-        <div style="background-color: #f1f5f8;" class="footer-content row py-2 rounded-bottom-3 shadow p-3 rounded">
-          <div class="col-sm-8 p-0 d-flex">
-            <div class="mt-1">
-              <label class="ms-3" style="font-size:17px" for="">5.0</label>
-            </div>
-            <div class="rating w-75">
-              <input type="radio" id="star-1" name="star-radio" value="star-1" checked>
-              <label for="star-1">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path>
-                </svg>
-              </label>
-              <input type="radio" id="star-2" name="star-radio" value="star-1">
-              <label for="star-2">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path>
-                </svg>
-              </label>
-              <input type="radio" id="star-3" name="star-radio" value="star-1">
-              <label for="star-3">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path>
-                </svg>
-              </label>
-              <input type="radio" id="star-4" name="star-radio" value="star-1">
-              <label for="star-4">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path>
-                </svg>
-              </label>
-              <input type="radio" id="star-5" name="star-radio" value="star-1">
-              <label for="star-5">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path>
-                </svg>
-              </label>
-            </div>
-          </div>
-          <div class="col-sm-4 p-0 mt-1">
-            <button class="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-              <svg class="svgIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
-                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
-                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
-              </svg> Profile
-            </button>
-          </div>
-          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  ...
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Understood</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    <?php endforeach; ?>
-  </div>
+  <script>
+    function confirmDelete() {
+      return confirm('Bạn có muốn xóa người dùng này?');
+    }
+  </script>
+
   <?php
   include_once '../views/layout/footer.php';
   ?>
