@@ -6,7 +6,11 @@ class EmployeeController {
     $this->employeeController = new EmployeeServices();
   }
   public function index() {
-    $employees=$this->employeeController->getAllEmployee();
-    include_once '../views/employees/index.blade.php';
+    if(!empty($_POST['search'])){
+        $employees=$this->employeeController->SearchEmployee($_POST['search']);
+    }else{
+        $employees=$this->employeeController->getAllEmployee();
+    }
+      include_once '../views/employees/index.blade.php';
   }
 }

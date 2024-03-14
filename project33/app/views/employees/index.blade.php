@@ -248,19 +248,13 @@ $currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, 
             <i class="bi bi-funnel me-1"></i>Lọc: Khoa
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Đổ khoa ra đây</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </div>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-funnel me-1"></i>Lọc: Bộ môn
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-            <li><a class="dropdown-item" href="#">Đổ bộ môn ra đây</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Khoa Công nghệ thông tin</a></li>
+            <li><a class="dropdown-item" href="#">Khoa Kinh tế - Quản lý</a></li>
+            <li><a class="dropdown-item" href="#">Khoa công trình</a></li>
+            <li><a class="dropdown-item" href="#">Khoa kỹ thuật tài nguyên nước</a></li>
+            <li><a class="dropdown-item" href="#">Khoa Điện - Điện tử</a></li>
+            <li><a class="dropdown-item" href="#">Trung tâm đào tạo quốc tế</a></li>
+            <li><a class="dropdown-item" href="#">Khoa Luật</a></li>
           </ul>
         </div>
       </div>
@@ -413,5 +407,15 @@ $currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, 
   include_once '../views/layout/footer.php';
   ?>
 </body>
+<script>
+  $(document).ready(function() {
+    var selectedValue; // Khai báo biến để lưu giá trị đã chọn
+    $('.dropdown-item').click(function() {
+      selectedValue = $(this).text(); // Lưu giá trị đã chọn vào biến
+      console.log(selectedValue); // In giá trị đã chọn ra console
+      // Bạn có thể xử lý giá trị đã chọn ở đây
+    });
+  });
+</script>
 
 </html>

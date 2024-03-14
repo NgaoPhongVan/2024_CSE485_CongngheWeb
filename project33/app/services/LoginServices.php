@@ -27,15 +27,15 @@ class LoginServices
             $_SESSION['UserID'] = $userRow['UserID'];
             $_SESSION['Username'] = $userRow['Username'];
             $_SESSION['Role'] = $userRow['Role'];
-            header('Location:' . DOMAIN . '?c=department');
+            header('Location:' . DOMAIN . '/?c=department');
         } else if ($userRow['Role'] == 'regular') {
             session_start();
             $_SESSION['UserID'] = $userRow['UserID'];
             $_SESSION['Username'] = $userRow['Username'];
             $_SESSION['Role'] = $userRow['Role'];
-            header('Location:' . DOMAIN . '?c=employee');
+            header('Location:' . DOMAIN . '/?c=employee');
         } else {
-            header('Location:' . DOMAIN . '?c=login');
+            header('Location:' . DOMAIN . '/?c=login');
         }
 
         if ($userRow) {

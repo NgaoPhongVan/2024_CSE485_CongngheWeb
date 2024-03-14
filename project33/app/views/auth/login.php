@@ -106,7 +106,7 @@
 </head>
 
 <body>
-    <form method="POST" action="http://localhost/2024_CSE485_CongngheWeb/project33/app/public/?c=login&a=login">
+    <form method="POST" action="<?= DOMAIN.'/?c=login&a=login'?>">
         <div class="container d-flex justify-content-center mt-5">
             <div class="card">
                 <a class="login">Đăng nhập</a>

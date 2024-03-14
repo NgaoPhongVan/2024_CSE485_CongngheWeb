@@ -141,6 +141,63 @@ session_start();
             transform: rotate(360deg);
             transition-duration: 1.5s;
         }
+
+        .button1 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgb(20, 20, 20);
+            border: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+            cursor: pointer;
+            transition-duration: 0.3s;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .svgIcon {
+            width: 12px;
+            transition-duration: 0.3s;
+        }
+
+        .svgIcon path {
+            fill: white;
+        }
+
+        .button1:hover {
+            width: 140px;
+            border-radius: 50px;
+            transition-duration: 0.3s;
+            background-color: rgb(181, 160, 255);
+            align-items: center;
+        }
+
+        .button1:hover .svgIcon {
+            /* width: 20px; */
+            transition-duration: 0.3s;
+            transform: translateY(-200%);
+        }
+
+        .button1::before {
+            position: absolute;
+            bottom: -20px;
+            content: "Upload";
+            color: white;
+            /* transition-duration: .3s; */
+            font-size: 0px;
+        }
+
+        .button1:hover::before {
+            font-size: 13px;
+            opacity: 1;
+            bottom: unset;
+            /* transform: translateY(-30px); */
+            transition-duration: 0.3s;
+        }
     </style>
 </head>
 
@@ -180,6 +237,7 @@ session_start();
     <div style="margin-right: 170px; margin-left: 170px">
         <div class="d-flex justify-content-between">
             <h4 style="color: #58b0e0" class="fw-bold">DANH BẠ ĐIỆN THOẠI ĐƠN VỊ</h4>
+            <a class="btn btn-primary" rel="stylesheet" href="../../app/public/index.php?c=department&a=GetID">Thêm </a>
         </div>
         <table class="container table table-bordered table-striped mt-3 mb-5">
             <thead>
@@ -188,9 +246,7 @@ session_start();
                     <th scope="col">TÊN ĐƠN VỊ</th>
                     <th scope="col">ĐỊA CHỈ</th>
                     <th scope="col">SỐ ĐIỆN THOẠI</th>
-                    <?php if ($_SESSION['Username'] == 'admin') : ?>
-                        <th scope="col">THAO TÁC</th>
-                    <?php endif; ?>
+                    <th scope="col">THAO TÁC</th>
                 </tr>
             </thead>
             <tbody>
@@ -201,19 +257,76 @@ session_start();
                         <td><?= $department->getDepartmentName() ?></td>
                         <td><?= $department->getAddress() ?></td>
                         <td><?= $department->getPhone() ?></td>
-                        <?php if ($_SESSION['Role'] == 'admin') : ?>
-                            <td>
-                                <a class='m-2' href='<?php DOMAIN.'/?c=deparment&....'?>'>
-                                    <i class='bi bi-eye-fill'></i>
-                                </a>
-                                <a class='m-2' href='<?php DOMAIN.'/?c=deparment&....'?>'>
-                                    <i class='bi bi-pencil-fill'></i>
-                                </a>
-                                <a class='m-2' href='<?php DOMAIN.'/?c=deparment&....'?>' onclick='return confirmDelete()'>
+                        <td>
+                            <!-- Button trigger modal -->
+                            <a class='m-2' type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?= $department->getDepartmentID() ?>">
+                                <i class='bi bi-eye-fill'></i>
+                            </a>
+                            <!-- Modal -->
+                            <div class="modal fade" id="staticBackdrop<?= $department->getDepartmentID() ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="modal-body">
+                                                <h2 class="pb-2 text-center">Profile Information</h2>
+                                                <div class="image text-center mx-auto" style="width: 120px; height: 120px">
+                                                    <img class="w-100 h-100 rounded-circle" src="../public/assets/images/avata.jpeg" alt="">
+                                                </div>
+                                                <table class="table">
+                                                    <tr>
+                                                        <td><label for="name">Tên đơn vị:</label></td>
+                                                        <td><input type="text" name="name" value="<?= $department->getDepartmentName() ?>" <?php if ($_SESSION['Role'] == 'regular') : ?> disabled <?php endif ?>></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label for="address">Địa chỉ:</label></td>
+                                                        <td> <input type="text" name="address" value="<?= $department->getAddress() ?>" <?php if ($_SESSION['Role'] == 'regular') : ?> disabled <?php endif ?>></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> <label for="email">Email:</label></td>
+                                                        <td><input type="email" name="email" value="<?= $department->getEmail() ?>" <?php if ($_SESSION['Role'] == 'regular') : ?> disabled <?php endif ?>></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label for="phone">Số điện thoại:</label></td>
+                                                        <td><input type="phone" name="phone" value="<?= $department->getPhone() ?>" <?php if ($_SESSION['Role'] == 'regular') : ?> disabled <?php endif ?>></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label for="phone">Website:</label></td>
+                                                        <td><input type="phone" name="phone" value="<?= $department->getWebsite() ?>" <?php if ($_SESSION['Role'] == 'regular') : ?> disabled <?php endif ?>></td>
+                                                    </tr>
+                                                </table>
+                                                <?php if ($_SESSION['Role'] == 'admin') : ?>
+                                                    <label for="avatar">Avatar:</label>
+                                                    <input type="file" name="avatar" accept="images/*">
+                                                    <br><br>
+                                                    <button class="button1 mx-auto mb-2" type="submit">
+                                                        <svg class="svgIcon" viewBox="0 0 384 512">
+                                                            <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
+                                                        </svg>
+                                                    </button>
+                                                <?php endif ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php if ($_SESSION['Role'] == 'admin') : ?>
+                                <a class='m-2' href='<?= DOMAIN . '?c=department&a=DeleteDepartment&id=' ?><?= $department->getDepartmentID() ?>' onclick='return confirmDelete()'>
                                     <i class='bi bi-trash-fill'></i>
                                 </a>
-                            </td>
-                        <?PHP endif; ?>
+                                <div class="modal fade show" id="#staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-scrollable">
+                                        <div class="modal-content">
+                                            <div class="modal-header ">
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
@@ -224,7 +337,6 @@ session_start();
             return confirm('Bạn có muốn xóa đơn vị này?');
         }
     </script>
-
     <?php
     include_once '../views/layout/footer.php';
     ?>
