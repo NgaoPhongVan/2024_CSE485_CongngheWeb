@@ -14,7 +14,11 @@
             'img' => 'img/fullstack.png.webp',
             'title' => 'LẬP TRÌNH WEB FULLSTACK',
             'description' => 'Khóa học phù hợp với người bất đầu lặp trình hoặc người chuyển nghề. 
+<<<<<<< HEAD
              Trang bị từ frontend đến backend, xây dựng website hoàn chỉnh sau khóa học.',
+=======
+            Trang bị từ frontend đến backend, xây dựng website hoàn chỉnh sau khóa học.',
+>>>>>>> 8a003c6d27a7364e58f809d8589fc16427c17ee1
             'fee' => 'Ưu đãi giảm 15% học phí',
             'start_date' => 'Khai giảng: 2/2024',
             'duration' => 'Thời lượng: 6 tháng'
@@ -22,8 +26,13 @@
         [
             'img' => 'img/java.png.webp',
             'title' => 'LẬP TRÌNH JAVA FULLSTACK',
+<<<<<<< HEAD
             'description' => 'Phát triển ứng dụng web từ cơ bản đến năng cao bằng Java, 
              các ứng dụng doanh nghiệp sử dụng J2EE, Servlet, JSP, Spring Framework, ẸB,...',
+=======
+            'description' => 'Phát triển ứng dụng web từ cơ bản đến năng cao bằng Java, các ứng dụng doanh nghiệp sử dụng J2EE, 
+            Servlet, JSP, Spring Framework, ẸB,...',
+>>>>>>> 8a003c6d27a7364e58f809d8589fc16427c17ee1
             'fee' => 'Ưu đãi giảm 15% học phí',
             'start_date' => 'Khai giảng: 2/2024',
             'duration' => 'Thời lượng: 236 giờ'
@@ -31,8 +40,13 @@
         [
             'img' => 'img/php.png.webp',
             'title' => 'LẬP TRÌNH PHP & LARAVEL',
+<<<<<<< HEAD
             'description' => 'PHP là một trong các ngôn ngữ thiết kế web mạnh nhất. 
              Khóa học trang bị kỹ năng xây dựng web hoàn chỉnh sử dụng PHP kết hợp Laravel Framework',
+=======
+            'description' => 'PHP là một trong các ngôn ngữ thiết kế web mạnh nhất. Khóa học trang bị kỹ năng xây dựng web hoàn chỉnh sử dụng 
+            PHP kết hợp Laravel Framework',
+>>>>>>> 8a003c6d27a7364e58f809d8589fc16427c17ee1
             'fee' => 'Khai giảng: 26/2/2024',
             'start_date' => 'Ưu đãi 10% học phí',
             'duration' => 'Thời lượng: 36 giờ'
@@ -40,8 +54,13 @@
         [
             'img' => 'img/lt.net.png.webp',
             'title' => 'KHÓA HỌC LẬP TRÌNH .NET',
+<<<<<<< HEAD
             'description' => 'Phát triển ứng dụng web sử dụng nền tảng ASP.NET Core MVC. 
              Để học tốt khóa học yêu cầu học viên đã có kiến thức C# và Frontend.',
+=======
+            'description' => 'Phát triển ứng dụng web sử dụng nền tảng ASP.NET Core MVC. Để học tốt khóa học yêu cầu học viên đã có kiến thức 
+            C# và Frontend.',
+>>>>>>> 8a003c6d27a7364e58f809d8589fc16427c17ee1
             'fee' => 'Khai giảng: 2/2024',
             'start_date' => 'Ưu đãi 10% học phí',
             'duration' => 'Thời lượng: 40 giờ'
@@ -49,8 +68,13 @@
         [
             'img' => 'img/sqlserver.png.webp',
             'title' => 'LẬP TRÌNH SQL SERVER',
+<<<<<<< HEAD
             'description' => 'Trang bị những kiến thức nền tảng vững chắc về SQL Server như các kỹ thuật: 
              lọc dữ liệu, phân tích, thiết kế và quản trị cơ sở dữ liệu,...',
+=======
+            'description' => 'Trang bị những kiến thức nền tảng vững chắc về SQL Server như các kỹ thuật: lọc dữ liệu, phân tích, 
+            thiết kế và quản trị cơ sở dữ liệu,...',
+>>>>>>> 8a003c6d27a7364e58f809d8589fc16427c17ee1
             'fee' => 'Khai giảng: 2/2024',
             'start_date' => 'Ưu đãi 10% học phí',
             'duration' => 'Thời lượng: 30 giờ'
