@@ -8,6 +8,7 @@
     <link rel="icon" type="" href="assets/images/logoicon-removebg-preview.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <style>
         @font-face {
             font-family: font_strong;
@@ -153,9 +154,12 @@
                                 <div class="col-sm-2 mt-1">
                                     <img style="width:37px; height:37px" class="rounded-circle" src="../public/assets/images/avata.jpeg" alt="">
                                 </div>
-                                <div class="col-sm-10">
+                                <div class="col-sm-9">
                                     <p class="m-0" style="font-size: 17px; white-space: nowrap; overflow: hidden;text-overflow: ellipsis; max-width: 300px;"><?php if ($_SESSION['Role'] == "regular") { ?> Nhân viên <?php } else { ?> Quản trị viên <?php } ?>: <?= $_SESSION['FullName'] ?></p>
                                     <p class="m-0" style="white-space: nowrap; overflow: hidden;text-overflow: ellipsis; max-width: 300px;"><?= $_SESSION['Email'] ?></p>
+                                </div>
+                                <div class="col-sm-1">
+                                    <i class="bi bi-person-lines-fill"></i>
                                 </div>
                             </div>
                         </ul>
@@ -198,13 +202,13 @@
                             <p class="m-0" style="color: #555555;">LIÊN HỆ</p>
                         </a>
                         <div class="mt-2 ms-3">
-                            <form class="form">
+                            <form class="form" action="<?php if ($_GET['c'] == "department") { ?> <?= DOMAIN . '/?c=department' ?> <?php } else { ?> <?= DOMAIN . '/?c=employee' ?> <?php } ?>" method="post">
                                 <button>
                                     <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
                                         <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                     </svg>
                                 </button>
-                                <input class="input" placeholder="Type your text" required="" type="text">
+                                <input class="input" placeholder="Type your text" required="" type="text" name="search">
                                 <button class="reset" type="reset">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12">
