@@ -8,7 +8,7 @@
     <link rel="icon" type="" href="assets/images/logoicon-removebg-preview.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <style>
         @font-face {
@@ -116,17 +116,12 @@
         <div class="container-fluid p-0 m-0" style="background-color: #1f2636;">
             <div style="background-color: #1f2636" class="head px-4 container d-flex justify-content-between">
                 <div class="text-left-head d-flex small" style="line-height: 40px; font-size: 16px">
-                    <a href="<?= DOMAIN . '/?c=department' ?>" class="text-decoration-none text-white">
-                        <p class="text-head <?php if ($_GET['c'] == 'department') : ?> text-white <?php endif ?>" style="margin-bottom: 0px; margin-right: 20px; ">Danh bạ đơn vị</p>
+                    <a class="text-decoration-none text-head">
+                        <p style="margin-bottom: 0px; margin-right: 20px; ">Danh bạ đơn vị</p>
                     </a>
-                    <a href="<?= DOMAIN . '/?c=employee' ?>" class="text-decoration-none">
-                        <p class="text-head <?php if ($_GET['c'] == 'employee') : ?> text-white <?php endif ?>" style="margin-bottom: 0px; margin-right: 20px;">Danh bạ cá nhân</p>
+                    <a class="text-decoration-none text-head">
+                        <p style="margin-bottom: 0px; margin-right: 20px;">Danh bạ cá nhân</p>
                     </a>
-                    <?php if ($_SESSION['Role'] == "admin") : ?>
-                        <a href="<?= DOMAIN . '/?c=user' ?>" class="text-decoration-none">
-                            <p class="text-head <?php if ($_GET['c'] == 'user') : ?> text-white <?php endif ?>" style="margin-bottom: 0px; margin-right: 20px;">Quản lý tài khoản</p>
-                        </a>
-                    <?php endif ?>
                 </div>
                 <div class="d-flex">
                     <div class="text-left-head text-white d-flex small" style="line-height: 40px; font-size: 16px">
@@ -145,25 +140,6 @@
                         <a href="" class="text-decoration-none">
                             <p class="text-head" style="margin-bottom: 0px; margin-right: 20px;">EN</p>
                         </a>
-                    </div>
-                    <div class="dropdown" style="z-index:99999">
-                        <button class="p-1 btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img style="width:30px; height:30px" class="rounded-circle" src="../public/assets/images/avata.jpeg" alt="">
-                        </button>
-                        <ul class="dropdown-menu bg-dark text-white p-3" style="min-width: 300px" aria-labelledby="dropdownMenuButton1">
-                            <div class="row" style="background-color:#303030">
-                                <div class="col-sm-2 mt-1">
-                                    <img style="width:37px; height:37px" class="rounded-circle" src="../public/assets/images/avata.jpeg" alt="">
-                                </div>
-                                <div class="col-sm-9">
-                                    <p class="m-0" style="font-size: 17px; white-space: nowrap; overflow: hidden;text-overflow: ellipsis; max-width: 300px;"><?php if ($_SESSION['Role'] == "regular") { ?> Nhân viên <?php } else { ?> Quản trị viên <?php } ?>: <?= $_SESSION['FullName'] ?></p>
-                                    <p class="m-0" style="white-space: nowrap; overflow: hidden;text-overflow: ellipsis; max-width: 300px;"><?= $_SESSION['Email'] ?></p>
-                                </div>
-                                <div class="col-sm-1">
-                                    <i class="bi bi-person-lines-fill"></i>
-                                </div>
-                            </div>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -203,7 +179,7 @@
                             <p class="m-0" style="color: #555555;">LIÊN HỆ</p>
                         </a>
                         <div class="mt-2 ms-3">
-                            <form class="form" action="<?php if ($_GET['c'] == "department") { ?> <?= DOMAIN . '/?c=department' ?> <?php } else { ?> <?= DOMAIN . '/?c=employee' ?> <?php } ?>" method="post">
+                            <form class="form" >
                                 <button>
                                     <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
                                         <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>

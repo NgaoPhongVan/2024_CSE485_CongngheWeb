@@ -412,8 +412,8 @@ $currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, 
     var selectedValue; // Khai báo biến để lưu giá trị đã chọn
     $('.dropdown-item').click(function() {
       selectedValue = $(this).text(); // Lưu giá trị đã chọn vào biến
-      console.log(selectedValue); // In giá trị đã chọn ra console
-      // Bạn có thể xử lý giá trị đã chọn ở đây
+      console.log(selectedValue); 
+      <?php ?>
     });
   });
 </script>
